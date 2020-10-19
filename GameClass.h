@@ -6,7 +6,7 @@ class game
     public:
 
     int x, y; //object's x and y position
-    char body; //object character
+    char body = '@'; //object character
     
     //object movement functions
     
