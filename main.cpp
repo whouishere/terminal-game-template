@@ -8,13 +8,13 @@ void gameRenderer()
 	for (int i = 0; i <= mapY - 1; i++){  //it makes a for loop that takes the y axis ends when it reaches the map size
 		for (int j = 0; j <= mapX - 1; j++) //and another for loop that takes the x axis and ends when it reaches the map size too
 		{
-			if (player.x == j && player.y == i) cout << player.body;
+			if (player.x == j && player.y == i) std::cout << player.body;
 			
-			else if (Map[i][j] == 1) cout << blockChar;
+			else if (Map[i][j] == 1) std::cout << blockChar;
 			
-			else if (Map[i][j] == 0) cout << " ";
+			else if (Map[i][j] == 0) std::cout << " ";
 		}
-		cout << endl; //when the X axis for loop renders a horizontal line, end line.
+		std::cout << std::endl; //when the X axis for loop renders a horizontal line, end line.
 	}
 }
 
@@ -22,21 +22,20 @@ void controlsFunc()
 {
 	key = getch(); //getch() function to detect a key without the need to show it on screen or press enter
 
-	if (key == 'w' && Map[player.y - 1][player.x] == airBlock){ //if that verifies if the w key has been pressed and if the direction the player is going is a air block
+	if (key == 'w' && Map[player.y - 1][player.x] == airBlock) //if that verifies if the w key has been pressed and if the direction the player is going is a air block
 		player.OneUp();
-	}
 		
-	if (key == 's' && Map[player.y + 1][player.x] == airBlock){ //if that verifies if the s key has been pressed and if the direction the player is going is a air block
+	if (key == 's' && Map[player.y + 1][player.x] == airBlock) //if that verifies if the s key has been pressed and if the direction the player is going is a air block
 		player.OneDown();
-	}
 		
-	if (key == 'a' && Map[player.y][player.x - 1] == airBlock){ //if that verifies if the a key has been pressed and if the direction the player is going is a air block
+	if (key == 'a' && Map[player.y][player.x - 1] == airBlock) //if that verifies if the a key has been pressed and if the direction the player is going is a air block
 		player.OneLeft();
-	}
-			
-	if (key == 'd' && Map[player.y][player.x + 1] == airBlock){ //if that verifies if the d key has been pressed and if the direction the player is going is a air block
+	
+	if (key == 'd' && Map[player.y][player.x + 1] == airBlock) //if that verifies if the d key has been pressed and if the direction the player is going is a air block
 		player.OneRight();
-	}
+	
+	if (key == 27) //if player presses "ESC" the game ends
+		gameEnd = false;
 }
 
 int main()
@@ -49,7 +48,7 @@ int main()
     /******************************************************
     *                 main renderer loop
     ******************************************************/
-	while (true) //while the game is running
+	while (gameEnd) //while the game is running
 	{
 		gameRenderer(); //where the entire game is rendered at the screen
 		

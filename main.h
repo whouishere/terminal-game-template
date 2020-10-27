@@ -11,14 +11,14 @@
 #define CLEAR "clear"
 #endif
 
-using namespace std;
+inline bool gameEnd = true;
 
 void gameRenderer();
 void controlsFunc();
 
 const char wallBlock = 1;
 const char airBlock = 0;
-inline unsigned char blockChar = 219;
+const unsigned char blockChar = 219;
 
 inline char key; //variable to store the key that is being pressed
 
