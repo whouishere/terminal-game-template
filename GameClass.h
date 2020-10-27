@@ -1,6 +1,4 @@
-#ifndef GAMECLASS_H_INCLUDED
-#define GAMECLASS_H_INCLUDED
-
+#pragma once
 class game
 {
     public:
@@ -18,10 +16,4 @@ class game
     
     void OneRight();
 
-
-
 };
-
-
-
-#endif //GAMECLASS_H_INCLUDED
